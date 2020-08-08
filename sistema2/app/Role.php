@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
 protected $fillable = [
-	'name','slug', 'descripcion'
+	'name', 'slug', 'description'
 ];
 
 //Relaciones
 public function permissions()
 {
-	return $this->hasMany('App\Permissions');
+	return $this->hasMany('App\Permission');
 }
 
 public function users()
