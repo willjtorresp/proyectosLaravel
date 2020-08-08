@@ -4,25 +4,23 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class Permissions extends Model
 {
 protected $fillable = [
 	'name','slug', 'descripcion'
 ];
-
 //Relaciones
-public function permissions()
-{
-	return $this->hasMany('App\Permissions');
-}
+	public function role()
+	{
+		return $this->belongsTo('App\Role');
+	}
 
 public function users()
 {
-	return $this->belongsToMany('App\User');
+	retunr $this->belongsToMany('App\User');
 }
 //Almacenamiento
 //Validacion
 //Recuperacion de informacion
 //Otras operaciones
-
 }

@@ -37,3 +37,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+
+//Relaciones
+    public function permissions()
+    {
+        return $this->belongsToMany('App\Permission');
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany('App\Role');
+    }
+//Almacenamiento
+//Validacion
+//Recuperacion de informacion
+//Otras operaciones
